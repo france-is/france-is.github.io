@@ -90,4 +90,6 @@
 
       // Create a new list item for the task
       const taskItem = document.createElement("li");
-      taskItem.inner
+      taskItem.innerHTML = `
+        <input type="checkbox" id="task-${taskValue}">
+        <label for="task-${taskValue}">
