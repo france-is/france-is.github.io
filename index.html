@@ -1,40 +1,72 @@
-<!-- Create a container for the note-taking software -->
-<div id="note-app">
-  <!-- Create a text area for the user to enter and edit their notes -->
-  <textarea id="note-text"></textarea>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Noto - A Simple Note Taking Website</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Helvetica Neue', sans-serif;
+    }
 
-  <!-- Create a container for the text formatting options -->
-  <div id="formatting-options">
-    <!-- Create buttons for the different text formatting options -->
-    <button id="bold-button">B</button>
-    <button id="italic-button">I</button>
-    <button id="underline-button">U</button>
+    body {
+      margin: 0;
+      padding: 16px;
+    }
+
+    .container {
+      display: flex;
+      height: 100%;
+    }
+
+    .sidebar {
+      width: 250px;
+      padding: 16px;
+      background-color: #f7f7f7;
+      border-radius: 4px;
+    }
+
+    .note-editor {
+      flex: 1;
+      padding: 16px;
+      border-radius: 4px;
+    }
+
+    .note-editor textarea {
+      width: 100%;
+      height: 100%;
+      border: none;
+      resize: none;
+      padding: 16px;
+      font-size: 16px;
+    }
+
+    .note-editor textarea:focus {
+      outline: none;
+    }
+
+    .note-editor button {
+      padding: 8px;
+      margin-top: 8px;
+      border: none;
+      background-color: #333;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="sidebar">
+      <h2>Formatting Options</h2>
+      <button>Bold</button>
+      <button>Italic</button>
+      <button>Underline</button>
+    </div>
+    <div class="note-editor">
+      <textarea placeholder="Enter your note here"></textarea>
+      <button>Add/Modify Note</button>
+    </div>
   </div>
-
-  <!-- Create a button for adding or modifying notes -->
-  <button id="add-note-button">Add Note</button>
-</div>
-
-<!-- Include the necessary JavaScript libraries -->
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-
-<!-- Add the JavaScript code for the note-taking software -->
-<script>
-  // Add the text formatting options to the buttons
-  $("#bold-button").click(function() {
-    $("#note-text").css("font-weight", "bold");
-  });
-  $("#italic-button").click(function() {
-    $("#note-text").css("font-style", "italic");
-  });
-  $("#underline-button").click(function() {
-    $("#note-text").css("text-decoration", "underline");
-  });
-
-  // Add the ability to add or modify notes
-  $("#add-note-button").click(function() {
-    var note_text = $("#note-text").val();
-    // Add the note to the list of notes
-  });
-</script>
+</body>
+</html>
