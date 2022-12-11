@@ -47,6 +47,7 @@
 
         button {
             padding: 5px 10px;
+            margin-right: 10px;
             border: none;
             border-radius: 5px;
             background-color: #007BFF;
@@ -71,26 +72,23 @@
 <body>
     <div id="sidebar">
         <h2>Text Formatting</h2>
-        <button id="bold-button">Bold</button><br>
-        <button id="italic-button">Italic</button><br>
-        <button id="underline-button">Underline</button><br>
-        <button id="strike-button">Strike</button>
+        <button id="bold-button" onclick="formatText('bold')">Bold</button><br>
+        <button id="italic-button" onclick="formatText('italic')">Italic</button><br>
+        <button id="underline-button" onclick="formatText('underline')">Underline</button><br>
+        <button id="strike-button" onclick="formatText('strike')">Strike</button>
     </div>
     <div id="note-container">
         <div>
-            <input type="text" id="note-title" placeholder="Enter note title...">
+            <input type="text" id="note-title" placeholder="Enter note title..." oninput="updateSaveButton()">
         </div>
         <div>
-            <textarea id="note-body" placeholder="Enter note body..."></textarea>
+            <textarea id="note-body" placeholder="Enter note body..." oninput="updateSaveButton()"></textarea>
         </div>
         <div>
             <button id="save-button" disabled>Save</button>
-            <button id="clear-button">Clear</button>
+            <button id="clear-button" onclick="clearFields()">Clear</button>
         </div>
     </div>
     <script>
-        const boldButton = document.querySelector('#bold-button');
-        const italicButton = document.querySelector('#italic-button');
-        const underlineButton = document.querySelector('#underline-button');
-        const strikeButton = document.querySelector('#strike-button');
-        const saveButton = document.
+        function updateSaveButton() {
+            const title = document.querySelector('
