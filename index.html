@@ -4,9 +4,15 @@
   <meta charset="UTF-8">
   <title>Tusk - Task Manager</title>
   <style>
-    /* Add styling for clean fonts, large padding, and rounded corners */
+    /* Add a funky font and a blue accent color */
+    @import url('https://fonts.googleapis.com/css2?family=Martian+Mono&display=swap');
     * {
-      font-family: "Helvetica Neue", sans-serif;
+      font-family: "Martian Mono", monospace;
+      color: #3366cc;
+    }
+
+    /* Add styling for large padding and rounded corners */
+    * {
       padding: 1em;
       border-radius: 4px;
     }
@@ -19,6 +25,7 @@
     /* Style the task manager container */
     #task-manager {
       display: flex;
+      background-color: #fff;
     }
 
     /* Style the sidebar for grouping and storing tasks */
@@ -75,22 +82,13 @@
       margin-bottom: 10px;
     }
   </style>
-  <script>
-    // Get a reference to the form and the task list
-    const form = document.querySelector("form");
-    const taskList = document.querySelector(".task-list");
-
-    // Create a new task item when the form is submitted
-    form.addEventListener("submit", event => {
-      event.preventDefault();
-
-      // Get the value of the input field
-      const taskInput = document.querySelector("input[type='text']");
-      const taskValue = taskInput.value;
-
-      // Create a new list item for the task
-      const taskItem = document.createElement("li");
-      taskItem.innerHTML = `
-        <input type="checkbox" id="task-${taskValue}">
-        <label for="task-${taskValue}">
-  </script>
+</head>
+<body>
+  <div id="task-manager">
+    <div id="sidebar">
+      <ul class="tabs">
+        <li class="active"><a href="#">Today</a></li>
+        <li><a href="#">Tomorrow</a></li>
+        <li><a href="#">Upcoming</a></li>
+      </ul>
+    </
