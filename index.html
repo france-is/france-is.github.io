@@ -1,0 +1,40 @@
+<!-- Create a container for the note-taking software -->
+<div id="note-app">
+  <!-- Create a text area for the user to enter and edit their notes -->
+  <textarea id="note-text"></textarea>
+
+  <!-- Create a container for the text formatting options -->
+  <div id="formatting-options">
+    <!-- Create buttons for the different text formatting options -->
+    <button id="bold-button">B</button>
+    <button id="italic-button">I</button>
+    <button id="underline-button">U</button>
+  </div>
+
+  <!-- Create a button for adding or modifying notes -->
+  <button id="add-note-button">Add Note</button>
+</div>
+
+<!-- Include the necessary JavaScript libraries -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+
+<!-- Add the JavaScript code for the note-taking software -->
+<script>
+  // Add the text formatting options to the buttons
+  $("#bold-button").click(function() {
+    $("#note-text").css("font-weight", "bold");
+  });
+  $("#italic-button").click(function() {
+    $("#note-text").css("font-style", "italic");
+  });
+  $("#underline-button").click(function() {
+    $("#note-text").css("text-decoration", "underline");
+  });
+
+  // Add the ability to add or modify notes
+  $("#add-note-button").click(function() {
+    var note_text = $("#note-text").val();
+    // Add the note to the list of notes
+  });
+</script>
