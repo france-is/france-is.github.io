@@ -1,91 +1,100 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
-  <title>Tusk Task Manager</title>
+  <meta charset="UTF-8">
+  <title>Tusk - Task Manager</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
-    body {
-      font-family: 'Inter', sans-serif;
-      padding: 20px;
+    /* Add styling for clean fonts, large padding, and rounded corners */
+    * {
+      font-family: "Helvetica Neue", sans-serif;
+      padding: 1em;
+      border-radius: 4px;
     }
-    h1 {
-      font-size: 2em;
-      margin: 0 0 0.5em;
+
+    /* Remove outlines for a more polished look */
+    *:focus {
+      outline: none;
     }
-    .sidebar {
-      float: left;
+
+    /* Style the task manager container */
+    #task-manager {
+      display: flex;
+    }
+
+    /* Style the sidebar for grouping and storing tasks */
+    #sidebar {
       width: 200px;
-      margin-right: 20px;
-      padding: 20px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
+      height: 100%;
+      background-color: #f2f2f2;
     }
-    .task-list {
-      list-style: none;
+
+    /* Style the tab layout for the sidebar */
+    #sidebar .tabs {
+      list-style-type: none;
+      margin: 0;
       padding: 0;
     }
-    .task-list li {
-      padding: 15px;
-      border-bottom: 1px solid #ccc;
+
+    #sidebar .tabs li {
+      display: inline-block;
+      margin-right: 10px;
     }
-    .task-list li:last-child {
+
+    #sidebar .tabs li a {
+      text-decoration: none;
+      color: #333;
+      padding: 10px;
+      display: block;
+      border: 1px solid #ccc;
       border-bottom: none;
     }
-    .task-list li.completed {
-      text-decoration: line-through;
-      color: #ccc;
+
+    #sidebar .tabs li a:hover,
+    #sidebar .tabs li.active a {
+      background-color: #ddd;
     }
-    /* Add some basic styling for the task and group forms */
-    form {
-      margin-top: 20px;
+
+    /* Style the section for adding and organizing tasks */
+    #tasks {
+      flex: 1;
     }
-    form label {
-      display: block;
-      margin-bottom: 0.5em;
+
+    #tasks h1 {
+      margin-top: 0;
     }
-    form input,
-    form select {
-      width: 100%;
-      padding: 8px;
-      font-size: 1em;
+
+    #tasks .task-list {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    #tasks .task-list li {
       border: 1px solid #ccc;
-    }
-    form button {
-      /* Use a more modern, cleaner button style */
-      padding: 8px;
-      font-size: 1em;
-      background-color: #2196f3;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-    /* Add some basic styling for the group edit form */
-    .group-edit-form {
-      display: none;
-    }
-    .group-edit-form input {
-      width: 80%;
-    }
-    .group-edit-form button {
-      width: 15%;
+      padding: 10px;
+      margin-bottom: 10px;
     }
   </style>
 </head>
 <body>
-  <h1>Tusk Task Manager</h1>
-  <div class="sidebar">
-    <h2>Task Groups</h2>
-    <ul class="group-list">
-      <li>
-        Personal
-        <button class="edit-group-button">Edit</button>
-        <button class="delete-group-button">Delete</button>
-        <form class="group-edit-form">
-          <input type="text" value="Personal">
-          <button type="submit">Save</button>
-        </form>
-      </li>
-      <li>
-        Work
-        <button class="edit-group-button">Edit</
+  <div id="task-manager">
+    <div id="sidebar">
+      <ul class="tabs">
+        <li class="active"><a href="#">Today</a></li>
+        <li><a href="#">Tomorrow</a></li>
+        <li><a href="#">Upcoming</a></li>
+      </ul>
+    </div>
+    <div id="tasks">
+      <h1>Today's Tasks</h1>
+      <ul class="task-list">
+        <li>
+          <input type="checkbox" id="task-1">
+          <label for="task-1">Take out the trash</label>
+        </li>
+        <li>
+          <input type="checkbox" id="task-2">
+          <label for="task-2">Do the dishes</label>
+        </li>
+        <li>
+          <input type="checkbox" id="task-3">
