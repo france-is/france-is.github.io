@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+<head>
+  <title>Tusk Task Manager</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+    body {
+      font-family: 'Inter', sans-serif;
+      padding: 20px;
+    }
+    h1 {
+      font-size: 2em;
+      margin: 0 0 0.5em;
+    }
+    .sidebar {
+      float: left;
+      width: 200px;
+      margin-right: 20px;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    .task-list {
+      list-style: none;
+      padding: 0;
+    }
+    .task-list li {
+      padding: 15px;
+      border-bottom: 1px solid #ccc;
+    }
+    .task-list li:last-child {
+      border-bottom: none;
+    }
+    .task-list li.completed {
+      text-decoration: line-through;
+      color: #ccc;
+    }
+    form {
+      margin-top: 20px;
+    }
+    form label {
+      display: block;
+      margin-bottom: 0.5em;
+    }
+    form input,
+    form select {
+      width: 100%;
+      padding: 8px;
+      font-size: 1em;
+      border: 1px solid #ccc;
+    }
+    /* Add some basic styling for the group edit form */
+    .group-edit-form {
+      display: none;
+    }
+    .group-edit-form input {
+      width: 80%;
+    }
+    .group-edit-form button {
+      width: 15%;
+    }
+  </style>
+</head>
+<body>
+  <h1>Tusk Task Manager</h1>
+  <div class="sidebar">
+    <h2>Task Groups</h2>
+    <ul class="group-list">
+      <li>
+        Personal
+        <button class="edit-group-button">Edit</button>
+        <button class="delete-group-button">Delete</button>
+        <form class="group-edit-form">
+          <input type="text" value="Personal">
+          <button type="submit">Save</button>
+        </form>
+      </li>
+      <li>
+        Work
+        <button class="edit-group-button">Edit</button>
+        <button class="delete-group-button">Delete</button>
+        <form class="group-edit-form">
+          <input type="text" value="Work">
+          <button type="submit">Save</button>
+        </form>
+      </li>
+      <li>
+        Shopping
+        <button class="edit-group-button">Edit</button>
+        <button class="delete-group-button">Delete</button>
+        <form class="group-edit-form">
+      </li>
+  </div>
+</body>
+</html>
