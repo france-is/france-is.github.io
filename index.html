@@ -75,27 +75,19 @@
       margin-bottom: 10px;
     }
   </style>
-</head>
-<body>
-  <div id="task-manager">
-    <div id="sidebar">
-      <ul class="tabs">
-        <li class="active"><a href="#">Today</a></li>
-        <li><a href="#">Tomorrow</a></li>
-        <li><a href="#">Upcoming</a></li>
-      </ul>
-    </div>
-    <div id="tasks">
-      <h1>Today's Tasks</h1>
-      <ul class="task-list">
-        <li>
-          <input type="checkbox" id="task-1">
-          <label for="task-1">Take out the trash</label>
-        </li>
-        <li>
-          <input type="checkbox" id="task-2">
-          <label for="task-2">Do the dishes</label>
-        </li>
-        <li>
-          <input type="checkbox" id="task-3">
-         
+  <script>
+    // Get a reference to the form and the task list
+    const form = document.querySelector("form");
+    const taskList = document.querySelector(".task-list");
+
+    // Create a new task item when the form is submitted
+    form.addEventListener("submit", event => {
+      event.preventDefault();
+
+      // Get the value of the input field
+      const taskInput = document.querySelector("input[type='text']");
+      const taskValue = taskInput.value;
+
+      // Create a new list item for the task
+      const taskItem = document.createElement("li");
+      taskItem.inner
